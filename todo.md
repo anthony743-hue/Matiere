@@ -1,0 +1,41 @@
+# Todo
+
+## Base
+
+-   Table :
+    - Etudiant:
+      - Id
+      - etu
+      - nom
+      - prenom
+      - dtnaissance
+    - Semestre:
+      - Id
+      - Libelle(s1,s2,s3,s4,s5,s6)
+      - IdAnnee
+    - Inscription:
+      - IdEtudiant
+      - IdSemestre
+      - dtInscription
+    - Option:
+      - id
+      - libelle
+    - Matiere:
+      - id
+      - libelle
+    - Matiere_Option:
+      - Id
+      - Idmatiere
+      - Idoption
+    - matiere_semestre:
+      - Id
+      - coefficients
+      - IdMatiere_option
+      - idSemestre
+    - Note:
+      - id
+      - IdInscription
+      - IdMatiere_semestre
+    - Annee:
+      - Id
+      - libelle(l1,l2,l3)
