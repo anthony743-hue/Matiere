@@ -127,3 +127,15 @@ CREATE TABLE `note` (
         ON UPDATE CASCADE
         ON DELETE RESTRICT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+CREATE TABLE role (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    designation VARCHAR(25)
+);
+
+CReATE TABLE utilisateur (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nom VARCHAR(20) NOT NULL,
+    prenom VARCHAR(20) NOT NULL,
+    password VARCHAR(255),
+);
