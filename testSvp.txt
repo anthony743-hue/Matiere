@@ -1,1 +1,7 @@
-aaaaaa
+
+
+creer tous les modeles
+creer un login avec des valeurs par defaut
+creer une page pour afficher la liste des eleves
+
+- 
