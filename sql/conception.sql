@@ -16,7 +16,7 @@ DROP TABLE IF EXISTS `annee`;
 
 CREATE TABLE `annee` (
     `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    `libelle` ENUM('l1', 'l2', 'l3') NOT NULL,
+    `libelle` VARCHAR(3) NOT NULL,
     PRIMARY KEY (`id`),
     UNIQUE KEY `uk_annee_libelle` (`libelle`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -24,30 +24,30 @@ CREATE TABLE `annee` (
 CREATE TABLE `etudiant` (
     `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
     `etu` VARCHAR(20) NOT NULL,
-    `nom` VARCHAR(100) NOT NULL,
-    `prenom` VARCHAR(100) NOT NULL,
-    `dtnaissance` DATE NOT NULL,
+    `nom` VARCHAR(20) NOT NULL,
+    `prenom` VARCHAR(20) NOT NULL,
+    `date_naissance` DATE NOT NULL,
     PRIMARY KEY (`id`),
     UNIQUE KEY `uk_etudiant_etu` (`etu`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE `option` (
     `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    `libelle` VARCHAR(100) NOT NULL,
+    `libelle` VARCHAR(20) NOT NULL,
     PRIMARY KEY (`id`),
     UNIQUE KEY `uk_option_libelle` (`libelle`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE `matiere` (
     `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    `libelle` VARCHAR(100) NOT NULL,
+    `libelle` VARCHAR(20) NOT NULL,
     PRIMARY KEY (`id`),
     UNIQUE KEY `uk_matiere_libelle` (`libelle`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE `semestre` (
     `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    `libelle` ENUM('s1', 's2', 's3', 's4', 's5', 's6') NOT NULL,
+    `libelle` VARCHAR(20) NOT NULL,
     `idAnnee` INT UNSIGNED NOT NULL,
     PRIMARY KEY (`id`),
     UNIQUE KEY `uk_semestre_libelle_annee` (`libelle`, `idAnnee`),
@@ -95,7 +95,7 @@ CREATE TABLE `matiere_option` (
 
 CREATE TABLE `matiere_semestre` (
     `id` INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    `coefficients` DECIMAL(6,2) NOT NULL,
+    `coefficients` DECIMAL(6,0) NOT NULL,
     `idMatiere_option` INT UNSIGNED NOT NULL,
     `idSemestre` INT UNSIGNED NOT NULL,
     PRIMARY KEY (`id`),
