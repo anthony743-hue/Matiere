@@ -3,6 +3,10 @@
 ## Base
 
 -   Table :
+    - Utilisateur
+      - id
+      - nom
+      - motDePasse
     - Etudiant:
       - Id
       - etu
@@ -17,20 +21,21 @@
       - IdEtudiant
       - IdSemestre
       - dtInscription
-    - Option:
+    - parcours:
       - id
       - libelle
     - Matiere:
       - id
       - libelle
-    - Matiere_Option:
+    - Matiere_parcours:
       - Id
       - Idmatiere
-      - Idoption
+      - Idparcours
     - matiere_semestre:
       - Id
       - coefficients
-      - IdMatiere_option
+      - Id_Ensemble_UE(ensemble unite d'enseignement)
+      - IdMatiere_parcours
       - idSemestre
     - Note:
       - id
@@ -39,3 +44,14 @@
     - Annee:
       - Id
       - libelle(l1,l2,l3)
+    - Ensemble-UE
+      - id
+  
+  ## controller
+    - UserController(fana)
+    - NoteController(fana)
+    - EtudiantController(Olivier)
+      - listeEtudiant
+      - liteSemestre && annee+parcours
+      - lsite
+    - 
